@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+<style>
+nav {
+margin:5px;
+}
+button {
+	border: none;
+	font-family: Verdana;
+	padding: 10px;
+	cursor: pointer;
+	background: none;
+	color: black;
+	font-size: small;
+}
+#pdfFrame {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+
+    #pdfFrame,
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+button:hover {
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<nav>
+    <button onclick="changePDF('5220411344_Revisi Minggu 1.pdf')">Minggu1</button>
+    <button onclick="changePDF('5220411344_Minggu2.pdf')">Minggu2</button>
+</nav>
+<div></div>
+    <iframe id="pdfFrame" width="800" height="500" src="5220411344_Revisi Minggu 1.pdf" style="border: none;"></iframe>
+    <br>
+
+
+    <script>
+        function changePDF(pdfFile) {
+            // Log the new PDF file to the console for debugging
+            console.log("Changing PDF to:", pdfFile);
+            document.getElementById('pdfFrame').src = pdfFile;
+        }
+    </script>
+</body>
+</html>
